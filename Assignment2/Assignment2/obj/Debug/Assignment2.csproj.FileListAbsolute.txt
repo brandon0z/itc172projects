@@ -1,0 +1,10 @@
+c:\users\brandon\documents\visual studio 2013\Projects\Assignment2\Assignment2\bin\Assignment2.dll.config
+c:\users\brandon\documents\visual studio 2013\Projects\Assignment2\Assignment2\bin\Assignment2.dll
+c:\users\brandon\documents\visual studio 2013\Projects\Assignment2\Assignment2\bin\Assignment2.pdb
+c:\users\brandon\documents\visual studio 2013\Projects\Assignment2\Assignment2\bin\EntityFramework.dll
+c:\users\brandon\documents\visual studio 2013\Projects\Assignment2\Assignment2\bin\EntityFramework.SqlServer.dll
+c:\users\brandon\documents\visual studio 2013\Projects\Assignment2\Assignment2\bin\EntityFramework.xml
+c:\users\brandon\documents\visual studio 2013\Projects\Assignment2\Assignment2\bin\EntityFramework.SqlServer.xml
+c:\users\brandon\documents\visual studio 2013\Projects\Assignment2\Assignment2\obj\Debug\Assignment2.csprojResolveAssemblyReference.cache
+c:\users\brandon\documents\visual studio 2013\Projects\Assignment2\Assignment2\obj\Debug\Assignment2.dll
+c:\users\brandon\documents\visual studio 2013\Projects\Assignment2\Assignment2\obj\Debug\Assignment2.pdb

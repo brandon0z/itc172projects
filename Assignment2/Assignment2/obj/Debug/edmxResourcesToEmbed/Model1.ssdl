@@ -1,0 +1,314 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ShowTrackerModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Artist">
+    <Key>
+      <PropertyRef Name="ArtistKey" />
+    </Key>
+    <Property Name="ArtistKey" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ArtistName" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="ArtistEmail" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="ArtistWebPage" Type="nvarchar" MaxLength="255" />
+    <Property Name="ArtistDateEntered" Type="datetime" />
+  </EntityType>
+  <EntityType Name="ArtistGenre">
+    <Key>
+      <PropertyRef Name="ArtistKey" />
+      <PropertyRef Name="GenreKey" />
+    </Key>
+    <Property Name="ArtistKey" Type="int" Nullable="false" />
+    <Property Name="GenreKey" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Fan">
+    <Key>
+      <PropertyRef Name="FanKey" />
+    </Key>
+    <Property Name="FanKey" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FanName" Type="nvarchar" MaxLength="255" />
+    <Property Name="FanEmail" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="FanDateEntered" Type="datetime" />
+  </EntityType>
+  <EntityType Name="FanArtist">
+    <Key>
+      <PropertyRef Name="FanKey" />
+      <PropertyRef Name="ArtistKey" />
+    </Key>
+    <Property Name="FanKey" Type="int" Nullable="false" />
+    <Property Name="ArtistKey" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="FanGenre">
+    <Key>
+      <PropertyRef Name="FanKey" />
+      <PropertyRef Name="GenreKey" />
+    </Key>
+    <Property Name="FanKey" Type="int" Nullable="false" />
+    <Property Name="GenreKey" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="FanLogin">
+    <Key>
+      <PropertyRef Name="FanLoginKey" />
+    </Key>
+    <Property Name="FanLoginKey" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FanKey" Type="int" />
+    <Property Name="FanLoginUserName" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="FanLoginPasswordPlain" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="FanLoginRandom" Type="int" Nullable="false" />
+    <Property Name="FanLoginHashed" Type="varbinary" MaxLength="500" />
+    <Property Name="FanLoginDateAdded" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Genre">
+    <Key>
+      <PropertyRef Name="GenreKey" />
+    </Key>
+    <Property Name="GenreKey" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="GenreName" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="GenreDescription" Type="nvarchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="LoginHistory">
+    <Key>
+      <PropertyRef Name="LoginHistorykey" />
+    </Key>
+    <Property Name="LoginHistorykey" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserName" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="LoginHistoryDateTime" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Show">
+    <Key>
+      <PropertyRef Name="ShowKey" />
+    </Key>
+    <Property Name="ShowKey" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ShowName" Type="nvarchar" MaxLength="255" />
+    <Property Name="VenueKey" Type="int" />
+    <Property Name="ShowDate" Type="date" Nullable="false" />
+    <Property Name="ShowTime" Type="time" Precision="7" Nullable="false" />
+    <Property Name="ShowTicketInfo" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="ShowDateEntered" Type="datetime" />
+  </EntityType>
+  <EntityType Name="ShowDetail">
+    <Key>
+      <PropertyRef Name="ShowDetailKey" />
+    </Key>
+    <Property Name="ShowDetailKey" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ShowKey" Type="int" />
+    <Property Name="ArtistKey" Type="int" />
+    <Property Name="ShowDetailArtistStartTime" Type="time" Precision="7" Nullable="false" />
+    <Property Name="ShowDetailAdditional" Type="nvarchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="Venue">
+    <Key>
+      <PropertyRef Name="VenueKey" />
+    </Key>
+    <Property Name="VenueKey" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="VenueName" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="VenueAddress" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="VenueCity" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="VenueState" Type="nchar" MaxLength="2" Nullable="false" />
+    <Property Name="VenueZipCode" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="VenuePhone" Type="nchar" MaxLength="13" Nullable="false" />
+    <Property Name="VenueEmail" Type="nvarchar" MaxLength="255" />
+    <Property Name="VenueWebPage" Type="nvarchar" MaxLength="255" />
+    <Property Name="VenueAgeRestriction" Type="int" />
+    <Property Name="VenueDateAdded" Type="datetime" />
+  </EntityType>
+  <EntityType Name="VenueLogin">
+    <Key>
+      <PropertyRef Name="VenueLoginKey" />
+    </Key>
+    <Property Name="VenueLoginKey" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="VenueKey" Type="int" />
+    <Property Name="VenueLoginUserName" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="VenueLoginPasswordPlain" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="VenueLoginRandom" Type="int" Nullable="false" />
+    <Property Name="VenueLoginHashed" Type="varbinary" MaxLength="500" />
+    <Property Name="VenueLoginDateAdded" Type="datetime" />
+  </EntityType>
+  <Association Name="FK__ArtistGen__Artis__22AA2996">
+    <End Role="Artist" Type="Self.Artist" Multiplicity="1" />
+    <End Role="ArtistGenre" Type="Self.ArtistGenre" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Artist">
+        <PropertyRef Name="ArtistKey" />
+      </Principal>
+      <Dependent Role="ArtistGenre">
+        <PropertyRef Name="ArtistKey" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__ArtistGen__Genre__239E4DCF">
+    <End Role="Genre" Type="Self.Genre" Multiplicity="1" />
+    <End Role="ArtistGenre" Type="Self.ArtistGenre" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Genre">
+        <PropertyRef Name="GenreKey" />
+      </Principal>
+      <Dependent Role="ArtistGenre">
+        <PropertyRef Name="GenreKey" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__FanArtist__Artis__2B3F6F97">
+    <End Role="Artist" Type="Self.Artist" Multiplicity="1" />
+    <End Role="FanArtist" Type="Self.FanArtist" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Artist">
+        <PropertyRef Name="ArtistKey" />
+      </Principal>
+      <Dependent Role="FanArtist">
+        <PropertyRef Name="ArtistKey" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__FanArtist__FanKe__2A4B4B5E">
+    <End Role="Fan" Type="Self.Fan" Multiplicity="1" />
+    <End Role="FanArtist" Type="Self.FanArtist" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Fan">
+        <PropertyRef Name="FanKey" />
+      </Principal>
+      <Dependent Role="FanArtist">
+        <PropertyRef Name="FanKey" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__FanGenre__FanKey__267ABA7A">
+    <End Role="Fan" Type="Self.Fan" Multiplicity="1" />
+    <End Role="FanGenre" Type="Self.FanGenre" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Fan">
+        <PropertyRef Name="FanKey" />
+      </Principal>
+      <Dependent Role="FanGenre">
+        <PropertyRef Name="FanKey" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__FanGenre__GenreK__276EDEB3">
+    <End Role="Genre" Type="Self.Genre" Multiplicity="1" />
+    <End Role="FanGenre" Type="Self.FanGenre" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Genre">
+        <PropertyRef Name="GenreKey" />
+      </Principal>
+      <Dependent Role="FanGenre">
+        <PropertyRef Name="GenreKey" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__FanLogin__FanKey__300424B4">
+    <End Role="Fan" Type="Self.Fan" Multiplicity="0..1" />
+    <End Role="FanLogin" Type="Self.FanLogin" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Fan">
+        <PropertyRef Name="FanKey" />
+      </Principal>
+      <Dependent Role="FanLogin">
+        <PropertyRef Name="FanKey" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Show__VenueKey__164452B1">
+    <End Role="Venue" Type="Self.Venue" Multiplicity="0..1" />
+    <End Role="Show" Type="Self.Show" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Venue">
+        <PropertyRef Name="VenueKey" />
+      </Principal>
+      <Dependent Role="Show">
+        <PropertyRef Name="VenueKey" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__ShowDetai__Artis__1B0907CE">
+    <End Role="Artist" Type="Self.Artist" Multiplicity="0..1" />
+    <End Role="ShowDetail" Type="Self.ShowDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Artist">
+        <PropertyRef Name="ArtistKey" />
+      </Principal>
+      <Dependent Role="ShowDetail">
+        <PropertyRef Name="ArtistKey" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__ShowDetai__ShowK__1A14E395">
+    <End Role="Show" Type="Self.Show" Multiplicity="0..1" />
+    <End Role="ShowDetail" Type="Self.ShowDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Show">
+        <PropertyRef Name="ShowKey" />
+      </Principal>
+      <Dependent Role="ShowDetail">
+        <PropertyRef Name="ShowKey" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__VenueLogi__Venue__35BCFE0A">
+    <End Role="Venue" Type="Self.Venue" Multiplicity="0..1" />
+    <End Role="VenueLogin" Type="Self.VenueLogin" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Venue">
+        <PropertyRef Name="VenueKey" />
+      </Principal>
+      <Dependent Role="VenueLogin">
+        <PropertyRef Name="VenueKey" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="ShowTrackerModelStoreContainer">
+    <EntitySet Name="Artist" EntityType="Self.Artist" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ArtistGenre" EntityType="Self.ArtistGenre" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Fan" EntityType="Self.Fan" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="FanArtist" EntityType="Self.FanArtist" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="FanGenre" EntityType="Self.FanGenre" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="FanLogin" EntityType="Self.FanLogin" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Genre" EntityType="Self.Genre" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="LoginHistory" EntityType="Self.LoginHistory" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Show" EntityType="Self.Show" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ShowDetail" EntityType="Self.ShowDetail" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Venue" EntityType="Self.Venue" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="VenueLogin" EntityType="Self.VenueLogin" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__ArtistGen__Artis__22AA2996" Association="Self.FK__ArtistGen__Artis__22AA2996">
+      <End Role="Artist" EntitySet="Artist" />
+      <End Role="ArtistGenre" EntitySet="ArtistGenre" />
+    </AssociationSet>
+    <AssociationSet Name="FK__ArtistGen__Genre__239E4DCF" Association="Self.FK__ArtistGen__Genre__239E4DCF">
+      <End Role="Genre" EntitySet="Genre" />
+      <End Role="ArtistGenre" EntitySet="ArtistGenre" />
+    </AssociationSet>
+    <AssociationSet Name="FK__FanArtist__Artis__2B3F6F97" Association="Self.FK__FanArtist__Artis__2B3F6F97">
+      <End Role="Artist" EntitySet="Artist" />
+      <End Role="FanArtist" EntitySet="FanArtist" />
+    </AssociationSet>
+    <AssociationSet Name="FK__FanArtist__FanKe__2A4B4B5E" Association="Self.FK__FanArtist__FanKe__2A4B4B5E">
+      <End Role="Fan" EntitySet="Fan" />
+      <End Role="FanArtist" EntitySet="FanArtist" />
+    </AssociationSet>
+    <AssociationSet Name="FK__FanGenre__FanKey__267ABA7A" Association="Self.FK__FanGenre__FanKey__267ABA7A">
+      <End Role="Fan" EntitySet="Fan" />
+      <End Role="FanGenre" EntitySet="FanGenre" />
+    </AssociationSet>
+    <AssociationSet Name="FK__FanGenre__GenreK__276EDEB3" Association="Self.FK__FanGenre__GenreK__276EDEB3">
+      <End Role="Genre" EntitySet="Genre" />
+      <End Role="FanGenre" EntitySet="FanGenre" />
+    </AssociationSet>
+    <AssociationSet Name="FK__FanLogin__FanKey__300424B4" Association="Self.FK__FanLogin__FanKey__300424B4">
+      <End Role="Fan" EntitySet="Fan" />
+      <End Role="FanLogin" EntitySet="FanLogin" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Show__VenueKey__164452B1" Association="Self.FK__Show__VenueKey__164452B1">
+      <End Role="Venue" EntitySet="Venue" />
+      <End Role="Show" EntitySet="Show" />
+    </AssociationSet>
+    <AssociationSet Name="FK__ShowDetai__Artis__1B0907CE" Association="Self.FK__ShowDetai__Artis__1B0907CE">
+      <End Role="Artist" EntitySet="Artist" />
+      <End Role="ShowDetail" EntitySet="ShowDetail" />
+    </AssociationSet>
+    <AssociationSet Name="FK__ShowDetai__ShowK__1A14E395" Association="Self.FK__ShowDetai__ShowK__1A14E395">
+      <End Role="Show" EntitySet="Show" />
+      <End Role="ShowDetail" EntitySet="ShowDetail" />
+    </AssociationSet>
+    <AssociationSet Name="FK__VenueLogi__Venue__35BCFE0A" Association="Self.FK__VenueLogi__Venue__35BCFE0A">
+      <End Role="Venue" EntitySet="Venue" />
+      <End Role="VenueLogin" EntitySet="VenueLogin" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

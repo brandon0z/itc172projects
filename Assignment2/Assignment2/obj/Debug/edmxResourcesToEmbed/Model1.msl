@@ -1,0 +1,135 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ShowTrackerModelStoreContainer" CdmEntityContainer="ShowTrackerEntities">
+    <EntitySetMapping Name="Artists">
+      <EntityTypeMapping TypeName="ShowTrackerModel.Artist">
+        <MappingFragment StoreEntitySet="Artist">
+          <ScalarProperty Name="ArtistKey" ColumnName="ArtistKey" />
+          <ScalarProperty Name="ArtistName" ColumnName="ArtistName" />
+          <ScalarProperty Name="ArtistEmail" ColumnName="ArtistEmail" />
+          <ScalarProperty Name="ArtistWebPage" ColumnName="ArtistWebPage" />
+          <ScalarProperty Name="ArtistDateEntered" ColumnName="ArtistDateEntered" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Fans">
+      <EntityTypeMapping TypeName="ShowTrackerModel.Fan">
+        <MappingFragment StoreEntitySet="Fan">
+          <ScalarProperty Name="FanKey" ColumnName="FanKey" />
+          <ScalarProperty Name="FanName" ColumnName="FanName" />
+          <ScalarProperty Name="FanEmail" ColumnName="FanEmail" />
+          <ScalarProperty Name="FanDateEntered" ColumnName="FanDateEntered" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FanLogins">
+      <EntityTypeMapping TypeName="ShowTrackerModel.FanLogin">
+        <MappingFragment StoreEntitySet="FanLogin">
+          <ScalarProperty Name="FanLoginKey" ColumnName="FanLoginKey" />
+          <ScalarProperty Name="FanKey" ColumnName="FanKey" />
+          <ScalarProperty Name="FanLoginUserName" ColumnName="FanLoginUserName" />
+          <ScalarProperty Name="FanLoginPasswordPlain" ColumnName="FanLoginPasswordPlain" />
+          <ScalarProperty Name="FanLoginRandom" ColumnName="FanLoginRandom" />
+          <ScalarProperty Name="FanLoginHashed" ColumnName="FanLoginHashed" />
+          <ScalarProperty Name="FanLoginDateAdded" ColumnName="FanLoginDateAdded" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Genres">
+      <EntityTypeMapping TypeName="ShowTrackerModel.Genre">
+        <MappingFragment StoreEntitySet="Genre">
+          <ScalarProperty Name="GenreKey" ColumnName="GenreKey" />
+          <ScalarProperty Name="GenreName" ColumnName="GenreName" />
+          <ScalarProperty Name="GenreDescription" ColumnName="GenreDescription" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LoginHistories">
+      <EntityTypeMapping TypeName="ShowTrackerModel.LoginHistory">
+        <MappingFragment StoreEntitySet="LoginHistory">
+          <ScalarProperty Name="LoginHistorykey" ColumnName="LoginHistorykey" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="LoginHistoryDateTime" ColumnName="LoginHistoryDateTime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Shows">
+      <EntityTypeMapping TypeName="ShowTrackerModel.Show">
+        <MappingFragment StoreEntitySet="Show">
+          <ScalarProperty Name="ShowKey" ColumnName="ShowKey" />
+          <ScalarProperty Name="ShowName" ColumnName="ShowName" />
+          <ScalarProperty Name="VenueKey" ColumnName="VenueKey" />
+          <ScalarProperty Name="ShowDate" ColumnName="ShowDate" />
+          <ScalarProperty Name="ShowTime" ColumnName="ShowTime" />
+          <ScalarProperty Name="ShowTicketInfo" ColumnName="ShowTicketInfo" />
+          <ScalarProperty Name="ShowDateEntered" ColumnName="ShowDateEntered" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ShowDetails">
+      <EntityTypeMapping TypeName="ShowTrackerModel.ShowDetail">
+        <MappingFragment StoreEntitySet="ShowDetail">
+          <ScalarProperty Name="ShowDetailKey" ColumnName="ShowDetailKey" />
+          <ScalarProperty Name="ShowKey" ColumnName="ShowKey" />
+          <ScalarProperty Name="ArtistKey" ColumnName="ArtistKey" />
+          <ScalarProperty Name="ShowDetailArtistStartTime" ColumnName="ShowDetailArtistStartTime" />
+          <ScalarProperty Name="ShowDetailAdditional" ColumnName="ShowDetailAdditional" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Venues">
+      <EntityTypeMapping TypeName="ShowTrackerModel.Venue">
+        <MappingFragment StoreEntitySet="Venue">
+          <ScalarProperty Name="VenueKey" ColumnName="VenueKey" />
+          <ScalarProperty Name="VenueName" ColumnName="VenueName" />
+          <ScalarProperty Name="VenueAddress" ColumnName="VenueAddress" />
+          <ScalarProperty Name="VenueCity" ColumnName="VenueCity" />
+          <ScalarProperty Name="VenueState" ColumnName="VenueState" />
+          <ScalarProperty Name="VenueZipCode" ColumnName="VenueZipCode" />
+          <ScalarProperty Name="VenuePhone" ColumnName="VenuePhone" />
+          <ScalarProperty Name="VenueEmail" ColumnName="VenueEmail" />
+          <ScalarProperty Name="VenueWebPage" ColumnName="VenueWebPage" />
+          <ScalarProperty Name="VenueAgeRestriction" ColumnName="VenueAgeRestriction" />
+          <ScalarProperty Name="VenueDateAdded" ColumnName="VenueDateAdded" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VenueLogins">
+      <EntityTypeMapping TypeName="ShowTrackerModel.VenueLogin">
+        <MappingFragment StoreEntitySet="VenueLogin">
+          <ScalarProperty Name="VenueLoginKey" ColumnName="VenueLoginKey" />
+          <ScalarProperty Name="VenueKey" ColumnName="VenueKey" />
+          <ScalarProperty Name="VenueLoginUserName" ColumnName="VenueLoginUserName" />
+          <ScalarProperty Name="VenueLoginPasswordPlain" ColumnName="VenueLoginPasswordPlain" />
+          <ScalarProperty Name="VenueLoginRandom" ColumnName="VenueLoginRandom" />
+          <ScalarProperty Name="VenueLoginHashed" ColumnName="VenueLoginHashed" />
+          <ScalarProperty Name="VenueLoginDateAdded" ColumnName="VenueLoginDateAdded" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="ArtistGenre" TypeName="ShowTrackerModel.ArtistGenre" StoreEntitySet="ArtistGenre">
+      <EndProperty Name="Artist">
+        <ScalarProperty Name="ArtistKey" ColumnName="ArtistKey" />
+      </EndProperty>
+      <EndProperty Name="Genre">
+        <ScalarProperty Name="GenreKey" ColumnName="GenreKey" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FanArtist" TypeName="ShowTrackerModel.FanArtist" StoreEntitySet="FanArtist">
+      <EndProperty Name="Artist">
+        <ScalarProperty Name="ArtistKey" ColumnName="ArtistKey" />
+      </EndProperty>
+      <EndProperty Name="Fan">
+        <ScalarProperty Name="FanKey" ColumnName="FanKey" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FanGenre" TypeName="ShowTrackerModel.FanGenre" StoreEntitySet="FanGenre">
+      <EndProperty Name="Fan">
+        <ScalarProperty Name="FanKey" ColumnName="FanKey" />
+      </EndProperty>
+      <EndProperty Name="Genre">
+        <ScalarProperty Name="GenreKey" ColumnName="GenreKey" />
+      </EndProperty>
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping>

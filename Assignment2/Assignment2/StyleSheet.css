@@ -1,0 +1,39 @@
+﻿body {
+    width: 940px;
+    margin:auto;
+    background-color:lightblue;
+    padding:20px;
+}
+
+table tr th{
+    background-color:silver;
+    border: solid 3px black;
+    padding-left:4px;
+    padding-right:4px;
+}
+
+table tr td{
+    border: solid 3px black;
+    padding-left:4px;
+    padding-right:4px;
+}
+div#footer{
+    background-color:azure;
+    clear:both;
+    height:3em;
+    line-height:3em;
+
+}
+#footer li{
+    display:inline;
+    padding: 0 30px;
+}
+
+#footer ul{
+    text-align:center;
+
+}
+
+#footer a{
+    color:black;
+}
